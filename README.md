@@ -25,4 +25,5 @@ This repo includes a GitHub Actions workflow at `.github/workflows/deploy.yml`.
 1. Push to the `main` branch.
 2. In GitHub: Settings → Pages → set "Build and deployment" to "GitHub Actions".
 3. The site will be available at `https://oleksandr-prytula-avante.github.io/<repo>/`.
+
 # resume.github.io
