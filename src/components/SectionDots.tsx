@@ -22,7 +22,7 @@ const ITEMS = [
   {
     href: toSectionHash(ESectionId.Projects),
     labelKey: ETranslationKey.NavProjects,
-    disabled: true,
+    disabled: false,
   },
 ];
 
@@ -58,8 +58,8 @@ export function SectionDots() {
             aria-current={isActive ? "page" : undefined}
             className={
               isActive
-                ? "h-[15px] w-[15px] rounded-full border-2 border-white bg-[color:var(--color-accent)]"
-                : "h-[15px] w-[15px] rounded-full border border-white bg-transparent transition-colors duration-200 ease-out hover:border-[color:rgb(var(--color-accent-rgb)/0.85)] focus-visible:border-[color:rgb(var(--color-accent-rgb)/0.85)]"
+                ? "h-[15px] w-[15px] cursor-pointer rounded-full border-2 border-white bg-[color:var(--color-accent)]"
+                : "h-[15px] w-[15px] cursor-pointer rounded-full border border-white bg-transparent transition-colors duration-200 ease-out hover:border-[color:rgb(var(--color-accent-rgb)/0.85)] focus-visible:border-[color:rgb(var(--color-accent-rgb)/0.85)]"
             }
           />
         );

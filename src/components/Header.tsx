@@ -27,7 +27,6 @@ export function Header() {
     {
       href: toSectionHash(ESectionId.Projects),
       label: i18n.t(ETranslationKey.NavProjects),
-      disabled: true,
     },
   ];
 
@@ -37,21 +36,7 @@ export function Header() {
 
       <div className="flex items-center gap-1 whitespace-nowrap">
         <nav className="flex items-center gap-1 text-[16px] uppercase">
-          {navItems.map(({ href, label, disabled }) => {
-            if (disabled) {
-              return (
-                <span
-                  key={href}
-                  className="inline-flex w-[9rem] cursor-not-allowed justify-center text-white/40"
-                  aria-disabled="true"
-                >
-                  <span className="inline-flex border-b-[1.33px] border-transparent py-3">
-                    {label}
-                  </span>
-                </span>
-              );
-            }
-
+          {navItems.map(({ href, label }) => {
             const isActive = href === activeHash;
 
             return (
@@ -59,8 +44,8 @@ export function Header() {
                 key={href}
                 className={
                   isActive
-                    ? "inline-flex w-[9rem] justify-center no-underline"
-                    : "group inline-flex w-[9rem] justify-center no-underline transition-colors duration-200 ease-out hover:text-white/80 focus-visible:text-white/80"
+                    ? "inline-flex w-[9rem] cursor-pointer justify-center no-underline"
+                    : "group inline-flex w-[9rem] cursor-pointer justify-center no-underline transition-colors duration-200 ease-out hover:text-white/80 focus-visible:text-white/80"
                 }
                 href={href}
                 aria-current={isActive ? "page" : undefined}

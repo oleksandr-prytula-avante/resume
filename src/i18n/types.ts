@@ -20,6 +20,12 @@ export const enum ETranslationKey {
   NavLinkedIn = "nav.linkedin",
   NavLeetCode = "nav.leetcode",
   NavEmail = "nav.email",
+
+  HeroHiIm = "hero.hiIm",
+  HeroRole = "hero.role",
+  HeroExperience = "hero.experience",
+  HeroLocation = "hero.location",
+  HeroCvDownload = "hero.cvDownload",
 }
 
 export type Translations = Record<ETranslationKey, string>;
