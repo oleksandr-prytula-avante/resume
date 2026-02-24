@@ -15,7 +15,7 @@ function createLines(): LineItem[] {
   return LINE_POSITIONS.map((pos, index) => ({
     left: `${pos}%`,
     top: `${Math.random() * 40}%`,
-    height: `${Math.random() * 50 + 30}%`,
+    height: `${Math.random() * 50 + 40}%`,
     delay: `${index * 1.5}s`,
   }));
 }

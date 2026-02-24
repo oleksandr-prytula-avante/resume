@@ -1,42 +1,45 @@
-import { useMemo } from "react";
+import { Children, useMemo } from "react";
+import type { ReactNode } from "react";
 
+import { SECTION_NAV_ITEMS } from "../constants/sectionNavigation";
 import { useActiveSectionHash } from "../hooks/useActiveSectionHash";
-import { useI18n } from "../hooks/useI18n";
-import { ETranslationKey } from "../i18n/types";
 import { ESectionId, toSectionHash } from "../utils/sections";
 
-const SLIDES = [
-  {
-    href: toSectionHash(ESectionId.About),
-    labelKey: ETranslationKey.NavAbout,
-  },
-  {
-    href: toSectionHash(ESectionId.Expirience),
-    labelKey: ETranslationKey.NavExpirience,
-  },
-  {
-    href: toSectionHash(ESectionId.Education),
-    labelKey: ETranslationKey.NavEducation,
-  },
-  {
-    href: toSectionHash(ESectionId.Projects),
-    labelKey: ETranslationKey.NavProjects,
-  },
-] as const;
+type SectionCarouselProps = {
+  children: ReactNode;
+};
 
-export function SectionCarousel() {
-  const i18n = useI18n();
+export function SectionCarousel({ children }: SectionCarouselProps) {
   const { activeHash } = useActiveSectionHash(toSectionHash(ESectionId.About));
+
+  const slideChildren = useMemo(
+    function () {
+      return Children.toArray(children);
+    },
+    [children],
+  );
+
+  const slides = useMemo(
+    function () {
+      return SECTION_NAV_ITEMS.map(function ({ href }, index) {
+        return {
+          href,
+          children: slideChildren[index] ?? null,
+        };
+      });
+    },
+    [slideChildren],
+  );
 
   const activeIndex = useMemo(
     function () {
-      const index = SLIDES.findIndex(function ({ href }) {
+      const index = slides.findIndex(function ({ href }) {
         return href === activeHash;
       });
 
       return index === -1 ? 0 : index;
     },
-    [activeHash],
+    [activeHash, slides],
   );
 
   return (
@@ -46,12 +49,10 @@ export function SectionCarousel() {
           className="flex h-full transition-transform duration-300 ease-out"
           style={{ transform: `translateX(-${activeIndex * 100}%)` }}
         >
-          {SLIDES.map(function ({ href, labelKey }) {
+          {slides.map(function ({ href, children }) {
             return (
               <section key={href} className="h-full w-full shrink-0 p-8">
-                <p className="text-3xl font-bold uppercase text-white">
-                  {i18n.t(labelKey)}
-                </p>
+                {children}
               </section>
             );
           })}

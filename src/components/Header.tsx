@@ -1,8 +1,8 @@
+import { SECTION_NAV_ITEMS } from "../constants/sectionNavigation";
 import { useI18n } from "../hooks/useI18n";
 import { useActiveSectionHash } from "../hooks/useActiveSectionHash";
 import { ESectionId, toSectionHash } from "../utils/sections";
 
-import { ETranslationKey } from "../i18n/types";
 import { LanguageDropdown } from "./LanguageDropdown";
 
 import logoUrl from "../assets/images/logo.webp";
@@ -11,32 +11,14 @@ export function Header() {
   const i18n = useI18n();
   const { activeHash } = useActiveSectionHash(toSectionHash(ESectionId.About));
 
-  const navItems = [
-    {
-      href: toSectionHash(ESectionId.About),
-      label: i18n.t(ETranslationKey.NavAbout),
-    },
-    {
-      href: toSectionHash(ESectionId.Expirience),
-      label: i18n.t(ETranslationKey.NavExpirience),
-    },
-    {
-      href: toSectionHash(ESectionId.Education),
-      label: i18n.t(ETranslationKey.NavEducation),
-    },
-    {
-      href: toSectionHash(ESectionId.Projects),
-      label: i18n.t(ETranslationKey.NavProjects),
-    },
-  ];
-
   return (
     <header className="flex h-24 w-full items-center justify-between">
       <img src={logoUrl} alt="Logo" className="h-12 w-auto" />
 
       <div className="flex items-center gap-1 whitespace-nowrap">
         <nav className="flex items-center gap-1 text-[16px] uppercase">
-          {navItems.map(({ href, label }) => {
+          {SECTION_NAV_ITEMS.map(({ href, labelKey }) => {
+            const label = i18n.t(labelKey);
             const isActive = href === activeHash;
 
             return (

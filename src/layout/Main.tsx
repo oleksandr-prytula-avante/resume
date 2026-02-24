@@ -3,6 +3,8 @@ import { LinesBackground } from "../components/LinesBackground/LinesBackground";
 import { Links } from "../components/Links";
 import { SectionCarousel } from "../components/SectionCarousel";
 import { SectionDots } from "../components/SectionDots";
+import { SECTION_NAV_ITEMS } from "../constants/sectionNavigation";
+// import avatarUrl from "../assets/images/avatar.webp";
 import { ExperienceIcon } from "../components/icons/ExperienceIcon";
 import { LocationIcon } from "../components/icons/LocationIcon";
 import { PdfIcon } from "../components/icons/PdfIcon";
@@ -26,7 +28,7 @@ export function Main() {
             </section>
 
             <section className="relative">
-              <div className="flex h-full flex-col px-14 pt-[15%]">
+              <div className="flex h-full flex-col px-14 pt-[10%]">
                 <div className="mb-2 flex items-center">
                   <span className="text-xl font-bold uppercase text-white">
                     {i18n.t(ETranslationKey.HeroHiIm)}
@@ -72,10 +74,24 @@ export function Main() {
                   </a>
                 </div>
               </div>
+
+              {/* <img
+                src={avatarUrl}
+                alt="Avatar"
+                className="pointer-events-none absolute bottom-0 right-0 h-auto w-56 opacity-80"
+              /> */}
             </section>
 
             <section className="relative">
-              <SectionCarousel />
+              <SectionCarousel>
+                {SECTION_NAV_ITEMS.map(function ({ href, labelKey }) {
+                  return (
+                    <p key={href} className="text-white">
+                      {i18n.t(labelKey)}
+                    </p>
+                  );
+                })}
+              </SectionCarousel>
               <SectionDots />
             </section>
           </div>
