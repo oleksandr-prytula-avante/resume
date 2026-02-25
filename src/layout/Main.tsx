@@ -1,20 +1,25 @@
+import { useState } from "react";
+
 import { Header } from "../components/Header";
 import { LinesBackground } from "../components/LinesBackground/LinesBackground";
 import { Links } from "../components/Links";
 import { SectionCarousel } from "../components/SectionCarousel";
 import { SectionDots } from "../components/SectionDots";
+import { Tags } from "../components/Tags";
 import { SECTION_NAV_ITEMS } from "../constants/sectionNavigation";
+import { ESectionId, toSectionHash } from "../utils/sections";
 // import avatarUrl from "../assets/images/avatar.webp";
-import { ExperienceIcon } from "../components/icons/ExperienceIcon";
-import { LocationIcon } from "../components/icons/LocationIcon";
-import { PdfIcon } from "../components/icons/PdfIcon";
 import { useI18n } from "../hooks/useI18n";
 import { ETranslationKey } from "../i18n/types";
+import { About } from "./About";
+import { Education } from "./Education";
+import { Experience } from "./Experience";
 
 export const ATS_CV_PATH = "/assets/pdf/ats-cv.pdf";
 
 export function Main() {
   const i18n = useI18n();
+  const [hoveredSkill, setHoveredSkill] = useState<string | null>(null);
 
   return (
     <div className="relative flex h-full flex-col overflow-hidden px-16 pb-8 text-white">
@@ -22,13 +27,13 @@ export function Main() {
       <div className="relative z-10 flex h-full flex-col">
         <Header />
         <main className="w-full flex-1 overflow-hidden">
-          <div className="grid h-full grid-cols-[5%_35%_60%]">
+          <div className="grid h-full grid-cols-[6%_34%_55%]">
             <section className="relative">
               <Links />
             </section>
 
             <section className="relative">
-              <div className="flex h-full flex-col px-14 pt-[10%]">
+              <div className="flex h-full flex-col px-14 pt-8">
                 <div className="mb-2 flex items-center">
                   <span className="text-xl font-bold uppercase text-white">
                     {i18n.t(ETranslationKey.HeroHiIm)}
@@ -44,32 +49,24 @@ export function Main() {
                   {i18n.t(ETranslationKey.HeroRole)}
                 </p>
 
-                <div className="flex flex-col gap-3 pt-4 text-white">
-                  <div className="flex items-center gap-3 py-1 text-xs text-white">
-                    <span className="inline-flex h-5 w-5 shrink-0 items-center justify-center">
-                      <ExperienceIcon className="h-[18px] w-[18px]" />
-                    </span>
-                    <p className="font-medium uppercase tracking-wide">
-                      {i18n.t(ETranslationKey.HeroExperience)}
-                    </p>
-                  </div>
+                <Tags
+                  hoveredSkill={hoveredSkill}
+                  onSkillEnter={setHoveredSkill}
+                  onSkillLeave={function () {
+                    setHoveredSkill(null);
+                  }}
+                />
 
-                  <div className="flex items-center gap-3 py-1 text-xs">
-                    <span className="inline-flex h-5 w-5 shrink-0 items-center justify-center">
-                      <LocationIcon className="h-[18px] w-[18px]" />
-                    </span>
-                    <span className="uppercase">{i18n.t(ETranslationKey.HeroLocation)}</span>
-                  </div>
-
+                <div className="mt-4 flex items-center gap-2">
+                  <p className="text-sm lowercase text-white">
+                    {i18n.t(ETranslationKey.HeroNeedMoreDetails)}
+                  </p>
                   <a
-                    className="flex cursor-pointer items-center gap-3 py-1 text-xs uppercase text-white transition-colors duration-200 ease-out hover:text-white/80"
+                    className="inline-flex cursor-pointer items-center py-1 text-[14px] uppercase text-[color:var(--color-accent)] transition-colors duration-200 ease-out hover:text-white"
                     href={ATS_CV_PATH}
                     target="_blank"
                     rel="noreferrer"
                   >
-                    <span className="inline-flex h-5 w-5 shrink-0 items-center justify-center">
-                      <PdfIcon className="h-[18px] w-[18px]" />
-                    </span>
                     <span>{i18n.t(ETranslationKey.HeroCvDownload)}</span>
                   </a>
                 </div>
@@ -84,12 +81,29 @@ export function Main() {
 
             <section className="relative">
               <SectionCarousel>
-                {SECTION_NAV_ITEMS.map(function ({ href, labelKey }) {
-                  return (
-                    <p key={href} className="text-white">
-                      {i18n.t(labelKey)}
-                    </p>
-                  );
+                {SECTION_NAV_ITEMS.map(function ({ href }) {
+                  if (href === toSectionHash(ESectionId.About)) {
+                    return (
+                      <About
+                        key={href}
+                        hoveredSkill={hoveredSkill}
+                        onSkillEnter={setHoveredSkill}
+                        onSkillLeave={function () {
+                          setHoveredSkill(null);
+                        }}
+                      />
+                    );
+                  }
+
+                  if (href === toSectionHash(ESectionId.Expirience)) {
+                    return <Experience key={href} />;
+                  }
+
+                  if (href === toSectionHash(ESectionId.Education)) {
+                    return <Education key={href} />;
+                  }
+
+                  return null;
                 })}
               </SectionCarousel>
               <SectionDots />

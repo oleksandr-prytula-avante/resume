@@ -2,7 +2,6 @@ export const enum ESectionId {
   About = "about",
   Expirience = "expirience",
   Education = "education",
-  Projects = "projects",
 }
 
 export type SectionHash = `#${ESectionId}`;

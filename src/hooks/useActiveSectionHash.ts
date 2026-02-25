@@ -7,8 +7,7 @@ const VALID_HASHES = [
   toSectionHash(ESectionId.About),
   toSectionHash(ESectionId.Expirience),
   toSectionHash(ESectionId.Education),
-  toSectionHash(ESectionId.Projects),
-] as const;
+];
 
 function isSectionHash(value: string): value is SectionHash {
   return (VALID_HASHES as readonly string[]).includes(value);
