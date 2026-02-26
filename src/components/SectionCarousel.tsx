@@ -51,7 +51,7 @@ export function SectionCarousel({ children }: SectionCarouselProps) {
         >
           {slides.map(function ({ href, children }) {
             return (
-              <section key={href} className="h-full w-full shrink-0 p-8">
+              <section key={href} className="h-full w-full shrink-0 overflow-y-auto p-8">
                 {children}
               </section>
             );

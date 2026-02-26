@@ -31,6 +31,30 @@ export const enum ETranslationKey {
   AboutParagraph3 = "about.paragraph3",
   AboutParagraph4 = "about.paragraph4",
   AboutParagraph5 = "about.paragraph5",
+
+  ExperiencePresent = "experience.present",
+  ExperienceExpandDetails = "experience.expandDetails",
+  ExperienceHideDetails = "experience.hideDetails",
+
+  ExperienceOmnoraCompanyName = "experience.omnora.companyName",
+  ExperienceOmnoraJobTitle = "experience.omnora.jobTitle",
+  ExperienceOmnoraLocation = "experience.omnora.location",
+  ExperienceOmnoraDescription = "experience.omnora.description",
+
+  ExperienceDigitalsuitsCompanyName = "experience.digitalsuits.companyName",
+  ExperienceDigitalsuitsJobTitle = "experience.digitalsuits.jobTitle",
+  ExperienceDigitalsuitsLocation = "experience.digitalsuits.location",
+  ExperienceDigitalsuitsDescription = "experience.digitalsuits.description",
+
+  ExperienceCodeAndCareCompanyName = "experience.codeAndCare.companyName",
+  ExperienceCodeAndCareJobTitle = "experience.codeAndCare.jobTitle",
+  ExperienceCodeAndCareLocation = "experience.codeAndCare.location",
+  ExperienceCodeAndCareDescription = "experience.codeAndCare.description",
+
+  ExperienceLanarsCompanyName = "experience.lanars.companyName",
+  ExperienceLanarsJobTitle = "experience.lanars.jobTitle",
+  ExperienceLanarsLocation = "experience.lanars.location",
+  ExperienceLanarsDescription = "experience.lanars.description",
 }
 
 export type Translations = Record<ETranslationKey, string>;

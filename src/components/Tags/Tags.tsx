@@ -33,7 +33,7 @@ export function Tags({ hoveredSkill, onSkillEnter, onSkillLeave }: TagsProps) {
   }
 
   return (
-    <ul className="mt-4 flex flex-wrap gap-2">
+    <ul className="mt-4 flex flex-wrap gap-x-2 gap-y-4">
       {SKILL_TAGS.map(function ({ label, href }, index) {
         const isActive = hoveredSkill === label;
 
@@ -49,8 +49,8 @@ export function Tags({ hoveredSkill, onSkillEnter, onSkillLeave }: TagsProps) {
             <a
               className={
                 isActive
-                  ? "rounded-full border border-[color:var(--color-accent)] px-3 py-1 text-[13px] uppercase text-[color:var(--color-accent)] transition-colors duration-200 ease-out"
-                  : "rounded-full border border-white/50 px-3 py-1 text-[13px] uppercase text-white transition-colors duration-200 ease-out hover:border-[color:var(--color-accent)] hover:text-[color:var(--color-accent)]"
+                  ? "rounded-full border border-[color:var(--color-accent)] px-4 py-1.5 text-[14px] uppercase text-[color:var(--color-accent)] transition-colors duration-200 ease-out"
+                  : "rounded-full border border-white/50 px-4 py-1.5 text-[14px] uppercase text-white transition-colors duration-200 ease-out hover:border-[color:var(--color-accent)] hover:text-[color:var(--color-accent)]"
               }
               href={href}
               target="_blank"

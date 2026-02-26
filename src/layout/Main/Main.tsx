@@ -351,13 +351,13 @@ export function Main() {
           }}
         />
 
-        <div className="mt-4 flex items-center gap-2">
-          <p className="text-sm uppercase text-white">
+        <div className="mt-8 flex items-center gap-2">
+          <p className="text-[17.5px] uppercase text-white">
             {needMoreDetailsText.slice(0, visibleNeedMoreDetailsChars)}
             {needMoreDetailsTypingCursor}
           </p>
           <a
-            className="inline-flex cursor-pointer items-center py-1 text-[14px] uppercase text-[color:var(--color-accent)] transition-colors duration-200 ease-out hover:text-white"
+            className="inline-flex cursor-pointer items-center py-1 text-[17.5px] uppercase text-[color:var(--color-accent)] transition-colors duration-200 ease-out hover:text-white"
             href={ATS_CV_PATH}
             target="_blank"
             rel="noreferrer"
@@ -378,18 +378,18 @@ export function Main() {
   }
 
   return (
-    <div className="relative flex h-full flex-col overflow-hidden px-16 pb-8 text-white">
+    <div className="relative flex h-full flex-col overflow-hidden px-24 pb-16 text-white">
       <LinesBackground />
-      <div className="relative z-10 flex h-full flex-col">
+      <div className="relative z-10 flex h-full min-h-screen flex-col">
         <Header isLanguageDisabled={isHeroPrintingInProgress} />
         <main className="w-full flex-1 overflow-hidden">
-          <div className="grid h-full grid-cols-[5%_35%_60%]">
+          <div className="grid h-full grid-cols-[7%_38%_55%]">
             <section className="relative">
               <Links />
             </section>
 
             <section className="relative">
-              <div className="flex h-full flex-col px-14 pt-8">
+              <div className="flex h-full flex-col px-16 pt-8">
                 <div className="mb-2 flex items-center">
                   <span className="text-xl font-bold uppercase text-white">
                     {hiText.slice(0, visibleHiChars)}
@@ -414,7 +414,7 @@ export function Main() {
                   </span>
                 </h1>
 
-                <p className="mt-4 text-base uppercase text-[color:var(--color-accent)]">
+                <p className="mt-4 text-[17.5px] uppercase text-[color:var(--color-accent)]">
                   {roleText.slice(0, visibleRoleChars)}
                   {roleTypingCursor}
                 </p>

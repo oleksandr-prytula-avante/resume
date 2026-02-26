@@ -44,7 +44,7 @@ export function Links() {
   );
 
   return (
-    <div className="absolute bottom-4 flex flex-col gap-4">
+    <div className="absolute top-[32rem] flex flex-col gap-4">
       {LINKS.map(({ component: IconComponent, href, text }) => (
         <Tooltip key={href} content={text}>
           <a

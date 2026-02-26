@@ -17,19 +17,53 @@ export const TRANSLATIONS: Record<ELocale, Translations> = {
     [ETranslationKey.HeroHiIm]: "Hi, I'm",
     [ETranslationKey.HeroName]: "Oleksandr",
     [ETranslationKey.HeroSurname]: "Prytula",
-    [ETranslationKey.HeroRole]: "Software Engineer | Full Stack WEB Developer",
+    [ETranslationKey.HeroRole]: "Software Engineer | WEB Developer",
     [ETranslationKey.HeroNeedMoreDetails]: "Need more details?",
     [ETranslationKey.HeroCvDownload]: "Download CV (PDF)",
     [ETranslationKey.AboutParagraph1]:
       "I’m a Software Engineer with over 10 years of hands-on experience in WEB development across next domains: e-Learning, e-Commerce / Marketplaces, Trading, Insurance and Health Care. I’ve contributed to products in various delivery models - from out-staffing to startups - adapting quickly to diverse workflows, business goals, and team dynamics. I’ve worked both independently and in teams of 3 to 20 engineers, often within international, distributed environments.",
     [ETranslationKey.AboutParagraph2]:
-      "As a Full-Stack WEB developer, I deliver solutions from frontend interfaces to backend services and infrastructure. I’m experienced with monolithic and microservice architectures, REST / GraphQL APIs, databases like MySQL and MongoDB. I actively use Docker and implement CI /CD pipelines for automated deployment. Additionally, I use testing frameworks such as Playwright and Jest to ensure high code quality and reliability.",
+      "As a Full-Stack developer, I deliver solutions from frontend interfaces to backend services and infrastructure. I’m experienced with monolithic and microservice architectures, REST / GraphQL APIs, databases like MySQL and MongoDB. I actively use Docker and implement CI /CD pipelines for automated deployment. Additionally, I use testing frameworks such as Playwright and Jest to ensure high code quality and reliability.",
     [ETranslationKey.AboutParagraph3]:
       "My responsibilities include product evaluation and planning, technical estimations, architecture design, and MVP scoping. I collaborate closely with stakeholders to define requirements, select appropriate technologies, and ensure maintainability. I also mentor junior developers, conduct code reviews, and support onboarding.",
     [ETranslationKey.AboutParagraph4]:
       "I’m committed to continuous learning and staying current with evolving technologies. I continue applying and expanding this knowledge through challenging production engineering tasks. I regularly solve complex programming and system design problems to sharpen my algorithmic thinking and technical skills.",
     [ETranslationKey.AboutParagraph5]:
       "Also I actively integrate AI-powered tools - such as automated code generation, intelligent testing frameworks, and performance optimization utilities - into my development workflows to boost productivity, reduce manual effort, and improve application scalability.",
+    [ETranslationKey.ExperiencePresent]: "Present",
+    [ETranslationKey.ExperienceExpandDetails]: "Show more",
+    [ETranslationKey.ExperienceHideDetails]: "Show less",
+    
+    [ETranslationKey.ExperienceOmnoraCompanyName]:
+      "Omnora (fka SlidePresenter) | Startup / Product",
+    [ETranslationKey.ExperienceOmnoraJobTitle]:
+      "Web Developer",
+    [ETranslationKey.ExperienceOmnoraLocation]: "Germany and Frankfurt | Remote",
+    [ETranslationKey.ExperienceOmnoraDescription]:
+      "Web Developer | Startup / Product. Full-time.",
+    [ETranslationKey.ExperienceDigitalsuitsCompanyName]:
+      "DigitalSuits | Outsource / Dedicated Team",
+    [ETranslationKey.ExperienceDigitalsuitsJobTitle]:
+      "Web Developer & Technical Team Lead",
+    [ETranslationKey.ExperienceDigitalsuitsLocation]:
+      "Kharkiv, Ukraine | On-site",
+    [ETranslationKey.ExperienceDigitalsuitsDescription]:
+      "Web Developer & Technical Team Lead | Outsource / Dedicated Team. Full-time.",
+    [ETranslationKey.ExperienceCodeAndCareCompanyName]: "Code & Care | Outstaff",
+    [ETranslationKey.ExperienceCodeAndCareJobTitle]:
+      "WEB & Mobile Developer",
+    [ETranslationKey.ExperienceCodeAndCareLocation]:
+      "Kharkiv, Ukraine | On-site",
+    [ETranslationKey.ExperienceCodeAndCareDescription]:
+      "WEB & Mobile Developer | Outstaff. Full-time.",
+    [ETranslationKey.ExperienceLanarsCompanyName]:
+      "LANARS | Outsource / Dedicated team",
+    [ETranslationKey.ExperienceLanarsJobTitle]:
+      "WEB Developer",
+    [ETranslationKey.ExperienceLanarsLocation]:
+      "Dnipropetrovsk, Ukraine | On-site",
+    [ETranslationKey.ExperienceLanarsDescription]:
+      "WEB Developer | Outsource / Dedicated team. Full-time.",
   },
   [ELocale.Ru]: {
     [ETranslationKey.LocaleEn]: "EN",
@@ -59,6 +93,39 @@ export const TRANSLATIONS: Record<ELocale, Translations> = {
       "Я придерживаюсь принципа непрерывного обучения и слежу за развитием технологий. Я постоянно применяю и расширяю эти знания в сложных production-задачах. Я регулярно решаю комплексные задачи по программированию и системному дизайну, чтобы развивать алгоритмическое мышление и технические навыки.",
     [ETranslationKey.AboutParagraph5]:
       "Кроме того, я активно интегрирую AI-инструменты — такие как автоматизированная генерация кода, интеллектуальные фреймворки тестирования и утилиты оптимизации производительности — в рабочие процессы разработки, чтобы повышать продуктивность, снижать объем ручной работы и улучшать масштабируемость приложений.",
+    [ETranslationKey.ExperiencePresent]: "Настоящее время",
+    [ETranslationKey.ExperienceExpandDetails]: "Show more",
+    [ETranslationKey.ExperienceHideDetails]: "Show less",
+    [ETranslationKey.ExperienceOmnoraCompanyName]:
+      "Omnora (fka SlidePresenter) | Startup / Product",
+    [ETranslationKey.ExperienceOmnoraJobTitle]:
+      "Web Developer",
+    [ETranslationKey.ExperienceOmnoraLocation]: "Germany and Frankfurt | Remote",
+    [ETranslationKey.ExperienceOmnoraDescription]:
+      "Web Developer | Startup / Product. Full-time.",
+    [ETranslationKey.ExperienceDigitalsuitsCompanyName]:
+      "DigitalSuits | Outsource / Dedicated Team",
+    [ETranslationKey.ExperienceDigitalsuitsJobTitle]:
+      "Web Developer & Technical Team Lead",
+    [ETranslationKey.ExperienceDigitalsuitsLocation]:
+      "Kharkiv, Ukraine | On-site",
+    [ETranslationKey.ExperienceDigitalsuitsDescription]:
+      "Web Developer & Technical Team Lead | Outsource / Dedicated Team. Full-time.",
+    [ETranslationKey.ExperienceCodeAndCareCompanyName]: "Code & Care | Outstaff",
+    [ETranslationKey.ExperienceCodeAndCareJobTitle]:
+      "WEB & Mobile Developer",
+    [ETranslationKey.ExperienceCodeAndCareLocation]:
+      "Kharkiv, Ukraine | On-site",
+    [ETranslationKey.ExperienceCodeAndCareDescription]:
+      "WEB & Mobile Developer | Outstaff. Full-time.",
+    [ETranslationKey.ExperienceLanarsCompanyName]:
+      "LANARS | Outsource / Dedicated team",
+    [ETranslationKey.ExperienceLanarsJobTitle]:
+      "WEB Developer",
+    [ETranslationKey.ExperienceLanarsLocation]:
+      "Dnipropetrovsk, Ukraine | On-site",
+    [ETranslationKey.ExperienceLanarsDescription]:
+      "WEB Developer | Outsource / Dedicated team. Full-time.",
   },
   [ELocale.Sp]: {
     [ETranslationKey.LocaleEn]: "EN",
@@ -88,6 +155,39 @@ export const TRANSLATIONS: Record<ELocale, Translations> = {
       "Estoy comprometido con el aprendizaje continuo y con mantenerme actualizado en tecnologías en evolución. Sigo aplicando y ampliando este conocimiento a través de tareas desafiantes de ingeniería en producción. Resuelvo regularmente problemas complejos de programación y diseño de sistemas para fortalecer mi pensamiento algorítmico y mis habilidades técnicas.",
     [ETranslationKey.AboutParagraph5]:
       "Además, integro activamente herramientas impulsadas por IA — como generación automática de código, frameworks de testing inteligentes y utilidades de optimización de rendimiento — en mis flujos de desarrollo para aumentar la productividad, reducir el trabajo manual y mejorar la escalabilidad de las aplicaciones.",
+    [ETranslationKey.ExperiencePresent]: "Presente",
+    [ETranslationKey.ExperienceExpandDetails]: "Show more",
+    [ETranslationKey.ExperienceHideDetails]: "Show less",
+    [ETranslationKey.ExperienceOmnoraCompanyName]:
+      "Omnora (fka SlidePresenter) | Startup / Product",
+    [ETranslationKey.ExperienceOmnoraJobTitle]:
+      "Web Developer",
+    [ETranslationKey.ExperienceOmnoraLocation]: "Germany and Frankfurt | Remote",
+    [ETranslationKey.ExperienceOmnoraDescription]:
+      "Web Developer | Startup / Product. Full-time.",
+    [ETranslationKey.ExperienceDigitalsuitsCompanyName]:
+      "DigitalSuits | Outsource / Dedicated Team",
+    [ETranslationKey.ExperienceDigitalsuitsJobTitle]:
+      "Web Developer & Technical Team Lead",
+    [ETranslationKey.ExperienceDigitalsuitsLocation]:
+      "Kharkiv, Ukraine | On-site",
+    [ETranslationKey.ExperienceDigitalsuitsDescription]:
+      "Web Developer & Technical Team Lead | Outsource / Dedicated Team. Full-time.",
+    [ETranslationKey.ExperienceCodeAndCareCompanyName]: "Code & Care | Outstaff",
+    [ETranslationKey.ExperienceCodeAndCareJobTitle]:
+      "WEB & Mobile Developer",
+    [ETranslationKey.ExperienceCodeAndCareLocation]:
+      "Kharkiv, Ukraine | On-site",
+    [ETranslationKey.ExperienceCodeAndCareDescription]:
+      "WEB & Mobile Developer | Outstaff. Full-time.",
+    [ETranslationKey.ExperienceLanarsCompanyName]:
+      "LANARS | Outsource / Dedicated team",
+    [ETranslationKey.ExperienceLanarsJobTitle]:
+      "WEB Developer",
+    [ETranslationKey.ExperienceLanarsLocation]:
+      "Dnipropetrovsk, Ukraine | On-site",
+    [ETranslationKey.ExperienceLanarsDescription]:
+      "WEB Developer | Outsource / Dedicated team. Full-time.",
   },
   [ELocale.De]: {
     [ETranslationKey.LocaleEn]: "EN",
@@ -117,5 +217,38 @@ export const TRANSLATIONS: Record<ELocale, Translations> = {
       "Ich verfolge kontinuierliches Lernen und halte mich über technologische Entwicklungen auf dem Laufenden. Dieses Wissen wende ich in anspruchsvollen Production-Engineering-Aufgaben an und erweitere es fortlaufend. Ich löse regelmäßig komplexe Programmier- und Systemdesign-Probleme, um mein algorithmisches Denken und meine technischen Fähigkeiten zu schärfen.",
     [ETranslationKey.AboutParagraph5]:
       "Darüber hinaus integriere ich aktiv KI-gestützte Tools — wie automatische Codegenerierung, intelligente Test-Frameworks und Performance-Optimierungswerkzeuge — in meine Entwicklungsabläufe, um die Produktivität zu steigern, manuellen Aufwand zu reduzieren und die Skalierbarkeit von Anwendungen zu verbessern.",
+    [ETranslationKey.ExperiencePresent]: "Heute",
+    [ETranslationKey.ExperienceExpandDetails]: "Show more",
+    [ETranslationKey.ExperienceHideDetails]: "Show less",
+    [ETranslationKey.ExperienceOmnoraCompanyName]:
+      "Omnora (fka SlidePresenter) | Startup / Product",
+    [ETranslationKey.ExperienceOmnoraJobTitle]:
+      "Web Developer",
+    [ETranslationKey.ExperienceOmnoraLocation]: "Germany and Frankfurt | Remote",
+    [ETranslationKey.ExperienceOmnoraDescription]:
+      "Web Developer | Startup / Product. Full-time.",
+    [ETranslationKey.ExperienceDigitalsuitsCompanyName]:
+      "DigitalSuits | Outsource / Dedicated Team",
+    [ETranslationKey.ExperienceDigitalsuitsJobTitle]:
+      "Web Developer & Technical Team Lead",
+    [ETranslationKey.ExperienceDigitalsuitsLocation]:
+      "Kharkiv, Ukraine | On-site",
+    [ETranslationKey.ExperienceDigitalsuitsDescription]:
+      "Web Developer & Technical Team Lead | Outsource / Dedicated Team. Full-time.",
+    [ETranslationKey.ExperienceCodeAndCareCompanyName]: "Code & Care | Outstaff",
+    [ETranslationKey.ExperienceCodeAndCareJobTitle]:
+      "WEB & Mobile Developer",
+    [ETranslationKey.ExperienceCodeAndCareLocation]:
+      "Kharkiv, Ukraine | On-site",
+    [ETranslationKey.ExperienceCodeAndCareDescription]:
+      "WEB & Mobile Developer | Outstaff. Full-time.",
+    [ETranslationKey.ExperienceLanarsCompanyName]:
+      "LANARS | Outsource / Dedicated team",
+    [ETranslationKey.ExperienceLanarsJobTitle]:
+      "WEB Developer",
+    [ETranslationKey.ExperienceLanarsLocation]:
+      "Dnipropetrovsk, Ukraine | On-site",
+    [ETranslationKey.ExperienceLanarsDescription]:
+      "WEB Developer | Outsource / Dedicated team. Full-time.",
   },
 };
