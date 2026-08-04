@@ -1,4 +1,4 @@
-import { useMemo } from "react";
+import { useEffect, useState } from "react";
 
 import { DESKTOP_MIN_WIDTH_MEDIA_QUERY } from "../../constants/mediaQueries";
 import { useMediaQuery } from "../../hooks/useMediaQuery";
@@ -11,17 +11,26 @@ import "./LinesBackground.css";
 
 export function LinesBackground() {
   const isDesktopViewport = useMediaQuery(DESKTOP_MIN_WIDTH_MEDIA_QUERY, true);
+  const [verticalLines, setVerticalLines] = useState<
+    ReturnType<typeof generateVerticalLineStyles>
+  >([]);
+  const [horizontalLines, setHorizontalLines] = useState<
+    ReturnType<typeof generateHorizontalLineStyles>
+  >([]);
 
-  const verticalLines = useMemo(
+  useEffect(
     function () {
-      return isDesktopViewport ? generateVerticalLineStyles() : [];
-    },
-    [isDesktopViewport],
-  );
+      if (!isDesktopViewport) {
+        return;
+      }
+      const animationFrameId = window.requestAnimationFrame(function () {
+        setVerticalLines(generateVerticalLineStyles());
+        setHorizontalLines(generateHorizontalLineStyles());
+      });
 
-  const horizontalLines = useMemo(
-    function () {
-      return isDesktopViewport ? generateHorizontalLineStyles() : [];
+      return function () {
+        window.cancelAnimationFrame(animationFrameId);
+      };
     },
     [isDesktopViewport],
   );
